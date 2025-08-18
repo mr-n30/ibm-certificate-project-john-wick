@@ -14,6 +14,9 @@ This is a portfolio project page I created for the [IBM Full Stack Software Deve
 - transform
 - keyframes
 - transition
+- section
+- article
+- fieldset
 
 # Thanks for viewing!
 > Feel freet to submit a PR on anything I can improve on. Thanks for viewing and I hope you liked!
