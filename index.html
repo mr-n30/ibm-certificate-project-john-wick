@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Client: John Wick</title>
+    <style>
+        .john-wick-photo {
+            transition: transform 1s;
+        }
+
+        .john-wick-photo:hover {
+            transform: rotate3d(0, 1, 0, 30deg);
+        }
+
+
+        #skills {
+            animation-name: skills;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes skills {
+            0% {
+                transform: translateX(-1000px);
+            }
+
+            20% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+
+        }
+
+        .skills-delay {
+            animation-name: skills-delay;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes skills-delay {
+            0% {
+                transform: translateX(-1000px)
+            }
+
+            20% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        #about {
+            animation-name: about;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes about {
+            0% {
+                transform: translateX(1000px);
+            }
+
+            20% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .about-delay {
+            animation: about-delay;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes about-delay {
+            0% {
+                transform: translateX(1000px);
+            }
+
+            20% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="text-lg bg-slate-950 bg-[url(./images/background.jpg)] bg-fixed">
+    <!-- I rather do this in React with Node but for the project i'll have to do it this way. Follow me on GitHub: @mr-n30, and on X @mr_n30 -->
+    <!-- FAANG PLEASE HIRE ME! -->
+    <!-- [base64](https://www.base64encode.org/): `VXJ5eWIgSmJleXEhIDMxMzM3ICAgIGh0dHBzOi8vcm90MTMuY29tLw==` -->
+    <nav class="sticky top-0 z-10 border-b-1 w-full bg-black text-slate-50 p-5">
+        <ul class="flex flex-row justify-evenly items-center">
+            <li
+                class="px-4 py-2 border-2 text-white rounded hover:bg-red-300/70 hover:scale-110 transition duration-300">
+                <a href="#about">John Wick</a>
+            </li>
+            <li class="px-4 py-2 text-white rounded hover:bg-red-300/70 hover:scale-110 transition duration-300"><a
+                    href="#about">About</a></li>
+            <li class="px-4 py-2 text-white rounded hover:bg-red-300/70 hover:scale-110 transition duration-300"><a
+                    href="#skills">Skills</a></li>
+            <li class="px-4 py-2 text-white rounded hover:bg-red-300/70 hover:scale-110 transition duration-300"><a
+                    href="#recommendations">Recommendations</a></li>
+            <li
+                class="line-through px-4 py-2 text-white rounded hover:bg-red-300/70 hover:scale-110 transition duration-300">
+                <a href="#about">Projects</a></li>
+        </ul>
+    </nav>
+
+    <div class="flex flex-col justify-center items-center w-full h-full">
+        <main class="flex flex-col justify-center items-center w-[70%] text-stone-50 bg-black/90">
+
+            <section
+                class="p-5 w-full mb-6 border-b-4 border-gray-950 grid grid-cols-[repeat(3,350px)] justify-center items-center">
+                <h1 id="skills"
+                    class="uppercase flex justify-center items-center text-[10cqw] text-slate-50/80 opacity-70 bg-red-900/80 bg-blend-overlay col-start-1 col-end-3 h-full w-full bg-[url(./images/intro.jpg)] bg-no-repeat bg-center bg-cover rounded-xl">
+                    <span class="skills-delay">Skills</span>
+                </h1>
+                <!-- Marksmanship -->
+                <article
+                    class="h-[90%] self-center justify-self-center flex flex-col justify-center items-center m-4 border-2 w-64 shadow-xl rounded-xl p-2 text-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-950">
+                    <img src="./images/marksmanship.png" alt="Marksmanship emblem image"
+                        class="w-20 h-20 mb-2 rounded-full" />
+                    <h2 class="mb-4 text-xl font-semibold underline underline-offset-8">Marksmanship</h2>
+                    <p class="text-wrap tracking-wide text-md/7">John Wick is an expert in precision shooting with a
+                        wide range of firearms. His ability to assess
+                        a
+                        situation and deliver quick, accurate shots is unmatched.</p>
+                </article>
+
+                <!-- Hand-to-Hand Combat -->
+                <article
+                    class="h-[90%] self-center justify-self-center flex flex-col justify-center items-center m-4 border-2 w-64 shadow-xl rounded-xl p-2 text-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-950">
+                    <img src="./images/hand-to-hand-combat.png" alt="Hand-to-hand combat emblem image"
+                        class="w-20 h-20 mb-2 rounded-full" />
+                    <h2 class="mb-4 text-xl font-semibold underline underline-offset-8">Hand-to-Hand Combat</h2>
+                    <p class="text-wrap tracking-wide text-md/7">Trained in multiple martial arts, John excels in
+                        close-quarters combat. His fighting style is
+                        efficient, fluid, and designed to neutralize opponents quickly.</p>
+                </article>
+
+                <!-- Tactical Awareness -->
+                <article
+                    class="h-[90%] self-center justify-self-center flex flex-col justify-center items-center m-4 border-2 w-64 shadow-xl rounded-xl p-2 text-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-950">
+                    <img src="images/tactical.png" alt="Tactical awareness emblem image"
+                        class="w-20 h-20 mb-2 rounded-full" />
+                    <h2 class="mb-4 text-xl font-semibold underline underline-offset-8">Tactical Awareness</h2>
+                    <p class="text-wrap tracking-wide text-md/7">John possesses exceptional situational awareness. He
+                        adapts to changing environments and uses his
+                        surroundings strategically to gain the upper hand.</p>
+                </article>
+
+                <!-- Stealth -->
+                <article
+                    class="h-[90%] self-center justify-self-center flex flex-col justify-center items-center m-4 border-2 w-64 shadow-xl rounded-xl p-2 text-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-950">
+                    <img src="images/stealth.png" alt="Stealth emblem image" class="w-20 h-20 mb-2 rounded-full" />
+                    <h2 class="mb-4 text-xl font-semibold underline underline-offset-8">Stealth</h2>
+                    <p class="text-wrap tracking-wide text-md/7">Silent and calculated, John is able to move undetected,
+                        infiltrating secure locations with
+                        minimal
+                        noise and maximum efficiency.</p>
+                </article>
+
+                <!-- Resilience -->
+                <article
+                    class="h-[90%] self-center justify-self-center flex flex-col justify-center items-center m-4 border-2 w-64 shadow-xl rounded-xl p-2 text-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-950">
+                    <img src="images/resilience.png" alt="Resilience emblem image"
+                        class="w-20 h-20 mb-2 rounded-full" />
+                    <h2 class="mb-4 text-xl font-semibold underline underline-offset-8">Resilience</h2>
+                    <p class="text-wrap tracking-wide text-md/7">John’s physical endurance and mental focus allow him to
+                        continue fighting through pain and
+                        overwhelming odds, earning him a reputation as the man who never stops.</p>
+                </article>
+
+                <!-- About section -->
+                <h1 id="about"
+                    class="uppercase bg-red-900/90 bg-blend-overlay bg-cover opacity-70 bg-no-repeat bg-[url(./images/about.jpg)] font-bold h-[90%] flex items-center justify-center text-[10cqw] p-4 col-start-2 col-end-4">
+                    <span class="about-delay">
+                        About
+                    </span>
+                </h1>
+                <article class="flex justify-center items-center gap-4 p-4 col-start-1 col-end-4">
+                    <div class="w-[50%]">
+                        <h2 class="text-xl font-semibold underline underline-offset-8 mb-4">John Wick</h2>
+                        <p class="col-start-2 text-wrap tracking-wide text-md/7">
+                            John Wick is a skilled and relentless professional known for his
+                            precision, focus, and unwavering determination. With a background in high-stakes operations,
+                            he combines expertise, strategy, and discipline to overcome any challenge. Driven by
+                            principle and a code of conduct, he operates with quiet confidence and unmatched efficiency.
+                        </p>
+                    </div>
+                    <div
+                        class="john-wick-photo bg-[url(./images/john-wick.jpg)] bg-center bg-no-repeat bg-cover w-[500px] h-[500px] rounded-[50%] opacity-90">
+                        <img src="./images/john-wick.jpg" alt="Resilience emblem image" class="opacity-0 w-0 h-0" />
+                    </div>
+                </article>
+
+                <!-- Recommendations section -->
+                <section id="recommendations" class="p-5 mb-6 w-full">
+                    <form onsubmit="handleSubmit(event)">
+                        <fieldset class="mb-4">
+                            <legend class="text-lg uppercase font-semibold">Recommendations</legend>
+                            <input required type="email" name="email" placeholder="Enter your High Table email..."
+                                class="mt-2 p-2 border rounded w-full text-black">
+                        </fieldset>
+                        <button type="submit"
+                            class="px-4 py-2 border-2 text-white rounded hover:bg-red-300/70 hover:scale-110 transition duration-300">
+                            Submit
+                        </button>
+                    </form>
+                </section>
+            </section>
+        </main>
+
+    </div>
+    </div>
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault()
+            alert('Your recommendation has been sent to the High Table...')
+        }
+    </script>
+</body>
+
+</html>
