@@ -7,6 +7,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Client: John Wick</title>
     <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+        }
+
         .john-wick-photo {
             transition: transform 1s;
         }
@@ -99,7 +110,7 @@
     </style>
 </head>
 
-<body class="text-lg bg-slate-950 bg-[url(./images/background.jpg)] bg-fixed">
+<body class="text-lg bg-slate-950 bg-[url(./images/background.jpg)] bg-fixed overflow-x-hidden">
     <!-- I rather do this in React with Node but for the project i'll have to do it this way. Follow me on GitHub: @mr-n30, and on X @mr_n30 -->
     <!-- FAANG PLEASE HIRE ME! -->
     <!-- [base64](https://www.base64encode.org/): `VXJ5eWIgSmJleXEhIDMxMzM3ICAgIGh0dHBzOi8vcm90MTMuY29tLw==` -->
@@ -107,21 +118,22 @@
         <ul class="flex flex-row justify-evenly items-center">
             <li
                 class="px-4 py-2 border-2 text-white rounded hover:bg-red-300/70 hover:scale-110 transition duration-300">
-                <a href="#about">John Wick</a>
+                <a class="underline" href="#about">John Wick</a>
             </li>
             <li class="px-4 py-2 text-white rounded hover:bg-red-300/70 hover:scale-110 transition duration-300"><a
-                    href="#about">About</a></li>
+                    class="underline" href="#about">About</a></li>
             <li class="px-4 py-2 text-white rounded hover:bg-red-300/70 hover:scale-110 transition duration-300"><a
-                    href="#skills">Skills</a></li>
+                    class="underline" href="#skills">Skills</a></li>
             <li class="px-4 py-2 text-white rounded hover:bg-red-300/70 hover:scale-110 transition duration-300"><a
-                    href="#recommendations">Recommendations</a></li>
+                    class="underline" href="#recommendations">Recommendations</a></li>
             <li
                 class="line-through px-4 py-2 text-white rounded hover:bg-red-300/70 hover:scale-110 transition duration-300">
-                <a href="#about">Projects</a></li>
+                <a class="underline" href="#about">Projects</a>
+            </li>
         </ul>
     </nav>
 
-    <div class="flex flex-col justify-center items-center w-full h-full">
+    <div class="flex flex-col justify-center items-center w-full h-full h-full">
         <main class="flex flex-col justify-center items-center w-[70%] text-stone-50 bg-black/90">
 
             <section
@@ -210,19 +222,33 @@
                 </article>
 
                 <!-- Recommendations section -->
-                <section id="recommendations" class="p-5 mb-6 w-full">
-                    <form onsubmit="handleSubmit(event)">
-                        <fieldset class="mb-4">
-                            <legend class="text-lg uppercase font-semibold">Recommendations</legend>
-                            <input required type="email" name="email" placeholder="Enter your High Table email..."
-                                class="mt-2 p-2 border rounded w-full text-black">
+                <section id="recommendations" class="p-5 mb-6 col-start-1 col-end-4 flex flex-row gap-[100px]">
+                    <div id="comment-area" class="w-full flex flex-col gap-10 flex-col-reverse">
+                        <!-- Individual Comment(s) -->
+                        <article id="comment" class="border-b-2 border-red-900 w-full flex flex-col justify-center items-center pb-10">
+                            <h1 id="username">Comment by: the-high-table</h1>
+                            <textarea disabled
+                                class="resize-none w-full h-[250px] rounded-xl mt-5 p-4 bg-red-900 opacity-90">Welcome User, your message will be seen by John Wick.</textarea>
+                        </article>
+                    </div>
+                    <form class="p-10 w-[1000px] h-[500px] flex flex-col items-center justify-evenly"
+                        onsubmit="handleSubmit(event)">
+                        <fieldset class="border-2 rounded-xl border-red-900 p-3 gap-10 mb-4 w-[500px] flex flex-col justify-evenly">
+                            <legend class="text-lg uppercase font-semibold text-center">Recommendations</legend>
+                            <label>
+                                Username: <input placeholder="Enter your High Table username..." class="p-2 opacity-90 text-stone-50 bg-red-950/50 w-[70%] border-2 rounded-xl ml-5" required name="username"
+                                    type="text" />
+                            </label>
+                            <textarea required name="comment" placeholder="Enter your message for the High Table..."
+                                class="mt-2 p-2 border rounded w-full text-black h-[300px] rounded-xl resize-none opacity-90 bg-black text-red-500"> </textarea>
+                            <button type="submit"
+                                class="px-4 py-2 border-2 text-white rounded hover:bg-red-300/70 hover:scale-110 transition duration-300">
+                                Submit
+                            </button>
                         </fieldset>
-                        <button type="submit"
-                            class="px-4 py-2 border-2 text-white rounded hover:bg-red-300/70 hover:scale-110 transition duration-300">
-                            Submit
-                        </button>
                     </form>
                 </section>
+
             </section>
         </main>
 
@@ -231,6 +257,28 @@
     <script>
         function handleSubmit(e) {
             e.preventDefault()
+            let form = e.target
+            let username = form.username.value
+            let comment = form.comment.value
+            console.log(username, comment)
+
+            const commentArea = document.getElementById('comment-area')
+
+            const h1 = document.createElement('h1')
+            h1.innerText = `Comment by: ${username}`
+            // h1.className = ""
+
+            const textArea = document.createElement('textarea')
+            textArea.value = comment
+            textArea.className = "resize-none w-full h-[250px] rounded-xl mt-5 p-4 bg-red-900 opacity-90"
+            textArea.disabled = true
+
+            const article = document.createElement('article')
+            article.appendChild(h1)
+            article.appendChild(textArea)
+            article.className = "border-b-2 w-full flex flex-col justify-center items-center pb-10"
+
+            commentArea.appendChild(article)
             alert('Your recommendation has been sent to the High Table...')
         }
     </script>
