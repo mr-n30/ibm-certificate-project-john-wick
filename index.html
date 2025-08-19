@@ -26,6 +26,46 @@
             transform: rotate3d(0, 1, 0, 30deg);
         }
 
+        .projects {
+            animation-name: projects;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes projects {
+            0% {
+                transform: translateX(-1000px)
+            }
+
+            20% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .projects-figure {
+            animation-name: projects-figure;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes projects-figure {
+            0% {
+                transform: translateX(1000px)
+            }
+
+            20% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
 
         #skills {
             animation-name: skills;
@@ -128,7 +168,7 @@
                     class="underline" href="#recommendations">Recommendations</a></li>
             <li
                 class="line-through px-4 py-2 text-white rounded hover:bg-red-300/70 hover:scale-110 transition duration-300">
-                <a class="underline" href="#about">Projects</a>
+                <a class="underline" href="#projects">Projects</a>
             </li>
         </ul>
     </nav>
@@ -200,7 +240,7 @@
 
                 <!-- About section -->
                 <h1 id="about"
-                    class="uppercase bg-red-900/90 bg-blend-overlay bg-cover opacity-70 bg-no-repeat bg-[url(./images/about.jpg)] font-bold h-[90%] flex items-center justify-center text-[10cqw] p-4 col-start-2 col-end-4">
+                    class="uppercase rounded-xl bg-red-900/90 bg-blend-overlay bg-cover opacity-70 bg-no-repeat bg-[url(./images/about.jpg)] font-bold h-[90%] flex items-center justify-center text-[10cqw] p-4 col-start-2 col-end-4">
                     <span class="about-delay">
                         About
                     </span>
@@ -221,11 +261,29 @@
                     </div>
                 </article>
 
+                <!-- Projects Section -->
+                <section id="projects"
+                    class="flex-wrap justify-evenly items-center border-b-2 col-start-1 col-end-4 pb-10 flex flex-row">
+                    <h1
+                        class="text-stone-50/70 font-bold bg-red-950/90 bg-blend-overlay projects w-full h-[300px] flex justify-center items-center mb-10 rounded-xl bg-red-950/50 bg-[url(images/projects.jpg)] bg-center bg-cover bg-no-repeat text-[150px]">
+                        Projects
+                    </h1>
+                    <figure
+                        class="border-red-900 projects-figure border-2 w-[400px] h-[400px] rounded-xl p-4 flex flex-col justify-center items-center">
+                        <div
+                            class="border-2 border-red-900 rounded-2xl bg-[url(images/Iosef.png)] bg-no-repeat bg-cover bg-center grayscale h-full w-full">
+                            <img src="images/Iosef.png" alt="photo of john wick" class="w-full opacity-0" />
+                        </div>
+                        <figcaption class="pt-5 text-red-500">Iosef Tarasov</figcaption>
+                    </figure>
+                </section>
+
                 <!-- Recommendations section -->
                 <section id="recommendations" class="p-5 mb-6 col-start-1 col-end-4 flex flex-row gap-[100px]">
                     <div id="comment-area" class="w-full flex flex-col gap-10 flex-col-reverse">
                         <!-- Individual Comment(s) -->
-                        <article id="comment" class="border-b-2 border-red-900 w-full flex flex-col justify-center items-center pb-10">
+                        <article id="comment"
+                            class="border-b-2 border-red-900 w-full flex flex-col justify-center items-center pb-10">
                             <h1 id="username">Comment by: the-high-table</h1>
                             <textarea disabled
                                 class="resize-none w-full h-[250px] rounded-xl mt-5 p-4 bg-red-900 opacity-90">Welcome User, your message will be seen by John Wick.</textarea>
@@ -233,11 +291,13 @@
                     </div>
                     <form class="p-10 w-[1000px] h-[500px] flex flex-col items-center justify-evenly"
                         onsubmit="handleSubmit(event)">
-                        <fieldset class="border-2 rounded-xl border-red-900 p-3 gap-10 mb-4 w-[500px] flex flex-col justify-evenly">
+                        <fieldset
+                            class="border-2 p-4 rounded-xl border-red-900 gap-10 mb-4 w-[500px] flex flex-col justify-evenly">
                             <legend class="text-lg uppercase font-semibold text-center">Recommendations</legend>
                             <label>
-                                Username: <input placeholder="Enter your High Table username..." class="p-2 opacity-90 text-stone-50 bg-red-950/50 w-[70%] border-2 rounded-xl ml-5" required name="username"
-                                    type="text" />
+                                Username: <input placeholder="Enter your High Table username..."
+                                    class="p-2 opacity-90 text-stone-50 bg-red-950/50 w-[70%] border-2 rounded-xl ml-5"
+                                    required name="username" type="text" />
                             </label>
                             <textarea required name="comment" placeholder="Enter your message for the High Table..."
                                 class="mt-2 p-2 border rounded w-full text-black h-[300px] rounded-xl resize-none opacity-90 bg-black text-red-500"> </textarea>
@@ -277,7 +337,6 @@
             article.appendChild(h1)
             article.appendChild(textArea)
             article.className = "border-b-2 w-full flex flex-col justify-center items-center pb-10"
-
             commentArea.appendChild(article)
             alert('Your recommendation has been sent to the High Table...')
         }
