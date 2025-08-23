@@ -69,7 +69,7 @@
 
         #skills {
             animation-name: skills;
-            animation-duration: 5s;
+            animation-duration: 7s;
             animation-iteration-count: infinite;
         }
 
@@ -90,7 +90,7 @@
 
         .skills-delay {
             animation-name: skills-delay;
-            animation-duration: 5s;
+            animation-duration: 7s;
             animation-iteration-count: infinite;
         }
 
@@ -110,7 +110,7 @@
 
         #about {
             animation-name: about;
-            animation-duration: 5s;
+            animation-duration: 7s;
             animation-iteration-count: infinite;
         }
 
@@ -130,7 +130,7 @@
 
         .about-delay {
             animation: about-delay;
-            animation-duration: 5s;
+            animation-duration: 7s;
             animation-iteration-count: infinite;
         }
 
@@ -154,14 +154,16 @@
     <!-- I rather do this in React with Node but for the project i'll have to do it this way. Follow me on GitHub: @mr-n30, and on X @mr_n30 -->
     <!-- FAANG PLEASE HIRE ME! -->
     <!-- [base64](https://www.base64encode.org/): `VXJ5eWIgSmJleXEhIDMxMzM3ICAgIGh0dHBzOi8vcm90MTMuY29tLw==` -->
-    <nav class="sticky top-0 z-10 border-b-1 w-full bg-black text-slate-50 p-5">
+    <!-- The pulsing background div -->
+    <div id="pulsing-background" class="fixed inset-0 z-[-1] animate-pulse w-full h-full bg-red-950/90 opacity-10"></div>
+    <nav class="sticky top-0 z-10 border-b-1 w-full bg-black text-slate-50 p-5 relative z-0">
         <ul class="flex flex-row justify-evenly items-center">
             <li
-                class="px-4 py-2 border-2 text-white rounded hover:bg-red-300/70 hover:scale-110 transition duration-300">
-                <a class="underline" href="#about">John Wick</a>
+                class="p/handx-4 py-2 border-2 text-white rounded hover:bg-red-300/70 hover:scale-110 transition duration-300">
+                <a class="underline" href="#aboutanchor">John Wick</a>
             </li>
             <li class="px-4 py-2 text-white rounded hover:bg-red-300/70 hover:scale-110 transition duration-300"><a
-                    class="underline" href="#about">About</a></li>
+                    class="underline" href="#aboutanchor">About</a></li>
             <li class="px-4 py-2 text-white rounded hover:bg-red-300/70 hover:scale-110 transition duration-300"><a
                     class="underline" href="#skills">Skills</a></li>
             <li class="px-4 py-2 text-white rounded hover:bg-red-300/70 hover:scale-110 transition duration-300"><a
@@ -184,7 +186,7 @@
                 </h1>
                 <!-- Marksmanship -->
                 <article
-                    class="h-[90%] self-center justify-self-center flex flex-col justify-center items-center m-4 border-2 w-64 shadow-xl rounded-xl p-2 text-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-950">
+                    class="hover:animate-pulse h-[90%] self-center justify-self-center flex flex-col justify-center items-center m-4 border-2 w-64 shadow-xl rounded-xl p-2 text-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-950">
                     <img src="./images/marksmanship.png" alt="Marksmanship emblem image"
                         class="w-20 h-20 mb-2 rounded-full" />
                     <h2 class="mb-4 text-xl font-semibold underline underline-offset-8">Marksmanship</h2>
@@ -196,7 +198,7 @@
 
                 <!-- Hand-to-Hand Combat -->
                 <article
-                    class="h-[90%] self-center justify-self-center flex flex-col justify-center items-center m-4 border-2 w-64 shadow-xl rounded-xl p-2 text-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-950">
+                    class="hover:animate-pulse h-[90%] self-center justify-self-center flex flex-col justify-center items-center m-4 border-2 w-64 shadow-xl rounded-xl p-2 text-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-950">
                     <img src="./images/hand-to-hand-combat.png" alt="Hand-to-hand combat emblem image"
                         class="w-20 h-20 mb-2 rounded-full" />
                     <h2 class="mb-4 text-xl font-semibold underline underline-offset-8">Hand-to-Hand Combat</h2>
@@ -207,7 +209,7 @@
 
                 <!-- Tactical Awareness -->
                 <article
-                    class="h-[90%] self-center justify-self-center flex flex-col justify-center items-center m-4 border-2 w-64 shadow-xl rounded-xl p-2 text-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-950">
+                    class="hover:animate-pulse h-[90%] self-center justify-self-center flex flex-col justify-center items-center m-4 border-2 w-64 shadow-xl rounded-xl p-2 text-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-950">
                     <img src="images/tactical.png" alt="Tactical awareness emblem image"
                         class="w-20 h-20 mb-2 rounded-full" />
                     <h2 class="mb-4 text-xl font-semibold underline underline-offset-8">Tactical Awareness</h2>
@@ -218,7 +220,7 @@
 
                 <!-- Stealth -->
                 <article
-                    class="h-[90%] self-center justify-self-center flex flex-col justify-center items-center m-4 border-2 w-64 shadow-xl rounded-xl p-2 text-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-950">
+                    class="hover:animate-pulse h-[90%] self-center justify-self-center flex flex-col justify-center items-center m-4 border-2 w-64 shadow-xl rounded-xl p-2 text-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-950">
                     <img src="images/stealth.png" alt="Stealth emblem image" class="w-20 h-20 mb-2 rounded-full" />
                     <h2 class="mb-4 text-xl font-semibold underline underline-offset-8">Stealth</h2>
                     <p class="text-wrap tracking-wide text-md/7">Silent and calculated, John is able to move undetected,
@@ -229,7 +231,7 @@
 
                 <!-- Resilience -->
                 <article
-                    class="h-[90%] self-center justify-self-center flex flex-col justify-center items-center m-4 border-2 w-64 shadow-xl rounded-xl p-2 text-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-950">
+                    class="hover:animate-pulse h-[90%] self-center justify-self-center flex flex-col justify-center items-center m-4 border-2 w-64 shadow-xl rounded-xl p-2 text-center transition delay-50 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-950">
                     <img src="images/resilience.png" alt="Resilience emblem image"
                         class="w-20 h-20 mb-2 rounded-full" />
                     <h2 class="mb-4 text-xl font-semibold underline underline-offset-8">Resilience</h2>
@@ -247,7 +249,7 @@
                 </h1>
                 <article class="flex justify-center items-center gap-4 p-4 col-start-1 col-end-4">
                     <div class="w-[50%]">
-                        <h2 class="text-xl font-semibold underline underline-offset-8 mb-4">John Wick</h2>
+                        <h2 id="aboutanchor" class="text-xl font-semibold underline underline-offset-8 mb-4">John Wick</h2>
                         <p class="col-start-2 text-wrap tracking-wide text-md/7">
                             John Wick is a skilled and relentless professional known for his
                             precision, focus, and unwavering determination. With a background in high-stakes operations,
@@ -269,7 +271,7 @@
                         Projects
                     </h1>
                     <figure
-                        class="border-red-900 projects-figure border-2 w-[400px] h-[400px] rounded-xl p-4 flex flex-col justify-center items-center">
+                        class="border-red-900 projects-figure border-2 w-[400px] h-[400px] rounded-xl p-4 flex flex-col justify-center items-center animate-pulse">
                         <div
                             class="border-2 border-red-900 rounded-2xl bg-[url(images/Iosef.png)] bg-no-repeat bg-cover bg-center grayscale h-full w-full">
                             <img src="images/Iosef.png" alt="photo of john wick" class="w-full opacity-0" />
@@ -313,13 +315,18 @@
         </main>
 
     </div>
-    </div>
     <script>
         function handleSubmit(e) {
             e.preventDefault()
             let form = e.target
-            let username = form.username.value
-            let comment = form.comment.value
+            let username = form.username.value.trim()
+            let comment = form.comment.value.trim()
+
+            if (!username || !comment) {
+                alert('Please fill in all fields.')
+                return
+            }
+
             console.log(username, comment)
 
             const commentArea = document.getElementById('comment-area')
